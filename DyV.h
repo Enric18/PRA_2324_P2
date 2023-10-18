@@ -6,7 +6,7 @@ template<typename T>
 
 T BusquedaBinaria(T x, vector<T>& v, int ini, int fin){
   if(ini >fin){
-	return "No se encuentra en el array";
+	return -1;
   } 
   int m = (ini + fin) / 2;
   if(v[m] == x){
