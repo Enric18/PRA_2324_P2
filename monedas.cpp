@@ -14,10 +14,11 @@ void impMat(int *T, int tam1, int tam2){
 	cout << endl;
 }
 
-vector<int> Cambio(int *V, int M){
-	int g = sizeof(V)/sizeof(V[0])+ 2;
+vector<int> Cambio(vector<int> &V, int M){
+	int g = V.size();
+	M++;
 	int T[g][M];
-	cout  << "Array size:  " << g << "//" << M << "\n";
+	cout  << "Array size: " << g << " x " << M << "\n";
 	for(int i=0;i<g;i++){
 		for(int j=0;j<M;j++){
 			T[i][j]=-1;
@@ -52,7 +53,7 @@ vector<int> Cambio(int *V, int M){
 	}
 	impMat((int *)T, g, M);
 
-	vector<int>  Sol(g, 0);
+	vector<int> Sol(g, 0);
 	int i = g-1;
 	int j = M-1;
 	while(i != 0 && j != 0){
@@ -68,9 +69,9 @@ vector<int> Cambio(int *V, int M){
 }
 
 int main(){
-	int V[] = {1,4,6,8};
-	int g = sizeof(V)/sizeof(V[0]);
-	vector<int> solu = Cambio(V,9);
+	vector<int> V{1,4,6};
+	int g = V.size();
+	vector<int> solu = Cambio(V,8);
 	for (int i = 0; i < g ; i++) {
         	cout << "Valor moneda: " << V[i] << "||  Numero de monedas: "  << solu[i] << "\n";
 	}
