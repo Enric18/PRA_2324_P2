@@ -62,7 +62,7 @@ vector<int> Cambio(vector<int> &V, int M){
 			j = j -V[i];
 		}
 		else{
-			i = i-1;
+			i--;
 		}
 	}
 	return Sol;
